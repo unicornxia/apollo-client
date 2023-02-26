@@ -1,0 +1,22 @@
+
+
+
+#justinAppapollo:
+#  bootstrap:
+#    enabled: true
+#    namespaces: application
+#  meta: http://175.178.241.47:8080
+
+
+server:
+  port: 9090
+
+nacos:
+  config:
+    server-addr: http://175.178.241.47:8848
+spring:
+  application:
+    name: apollo-client
+
+
+justin: 1997

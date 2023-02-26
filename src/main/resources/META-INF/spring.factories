@@ -1,0 +1,2 @@
+org.springframework.context.ApplicationContextInitializer=\
+fit.justin.apolloclient.property.CustomPropertySourceLocator
