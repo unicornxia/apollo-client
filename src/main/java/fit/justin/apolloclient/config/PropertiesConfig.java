@@ -2,10 +2,7 @@ package fit.justin.apolloclient.config;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Data;
-import org.springframework.context.ApplicationContextInitializer;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
-import org.springframework.core.env.MapPropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -14,6 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * @author justin_xiao
+ */
 @Component
 public class PropertiesConfig extends Config {
 

@@ -5,11 +5,13 @@ import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MapPropertySource;
-import org.springframework.core.env.PropertySource;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author justin_xiao
+ */
 public class CustomPropertySourceLocator implements ApplicationContextInitializer {
 
     @Value("${spring.servlet.port}")
@@ -23,7 +25,7 @@ public class CustomPropertySourceLocator implements ApplicationContextInitialize
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
         Map<String, Object> map = new HashMap<>();
-        map.put("justin","2023");
+        map.put("justin", "2023");
         MapPropertySource mapPropertySource = new MapPropertySource("resilience4j-env", map);
         ConfigurableEnvironment environment = applicationContext.getEnvironment();
         environment.getPropertySources().addFirst(mapPropertySource);

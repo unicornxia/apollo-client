@@ -4,19 +4,23 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
-import org.apache.zookeeper.data.Stat;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * @author justin_xiao
+ */
+@Service
 public class ZookeeperService {
 
     @Resource
     private ZooKeeper zooKeeper;
 
     public String create(String path, String data) throws InterruptedException, KeeperException {
-        return zooKeeper.create(path, data.getBytes(), ZooDefs.Ids.CREATOR_ALL_ACL, CreateMode.PERSISTENT);
+        return zooKeeper.create(path, data.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
     }
 
 
@@ -43,7 +47,7 @@ public class ZookeeperService {
     }
 
 
-    public boolean deleteNode(String path)  {
+    public boolean deleteNode(String path) {
         try {
             zooKeeper.delete(path, -1);
         } catch (InterruptedException | KeeperException e) {

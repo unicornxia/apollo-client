@@ -16,7 +16,12 @@ nacos:
     server-addr: http://175.178.241.47:8848
 spring:
   application:
-    name: apollo-client
+    name: apollo
 
 
 justin: 1997
+
+
+zookeeper:
+    address: 172.16.2.47:12181,172.16.2.47:22181,172.16.2.47:32181
+    timeout: 5000
